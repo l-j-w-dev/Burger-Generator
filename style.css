@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html, body{
+    width:100%;
+    height:100%;
+}
+
+#wrap{
+    position: relative;
+    border: 1px solid black;
+    width:720px;
+    height:670px;
+    background-color:gray;
+    display:flex;
+}
+
+.draw{
+    width:320px;
+    height:320px;
+    padding:20px;
+    background-color: white;
+    position: relative;
+}
+.draw.result{
+    width:20px;
+    height:20px;
+    top:365px;
+    padding:0;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.draw .line{
+    left:0;
+    top:0;
+    position: absolute;
+    background-color:#aaa;
+    height:10px;
+    border-radius: 5px;
+    transform-origin:left 50%;
+    transform:translateY(-50%);
+    pointer-events: none;
+}
+.draw #dots .dot{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #80B918;
+    background-color:#EEEF20;
+    position: absolute;
+    z-index:5;
+    transform: translate(calc(-50% - 0.5px), calc(-50% - 0.5px));
+}
+.draw #dots .dot:hover{
+    border: 2px solid #AACC00;
+    background-color:#FFFF3F;
+    cursor: pointer;
+}
+
+.draw #grid{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-flow: wrap;
+}
+
+.draw #grid .cell{
+    width:20px;
+    height:20px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.draw #grid .cell.empty{
+    width:0px;
+    height:0px;
+    border:none;
+}
+.draw #grid .cell.empty_bottom{
+    width:20px;
+    border:none;
+}
+
+.draw #grid .left{
+    border-left: 1px solid #ccc;
+}
+.draw #grid .top{
+    border-top: 1px solid #ccc;
+}
+
+.draw #grid .next{
+    display:block;
+}
+
+#condition{
+    position: absolute;
+    width:600px;
+    height:200px;
+    bottom:0;
+    background-color:gainsboro;
+}
+#condition > div{
+    height:20px;
+    padding:10px;
+}
+.print.a{
+    position: absolute;
+    right:300px;
+    bottom:21px;
+    width:200px;
+    height:179px;
+    background-color: white;
+}
+.print.a textarea{
+    width:calc(100% - 1px);
+    height:calc(100% - 1px);
+    resize: none;
+}
+
+.print{
+    position: absolute;
+    right:0;
+    bottom:21px;
+    width:300px;
+    height:179px;
+    background-color: white;
+}
+.print textarea{
+    width:calc(100% - 1px);
+    height:calc(100% - 1px);
+    resize: none;
+}
+
+textarea {
+    outline: none;
+}

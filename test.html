@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+   <style>
+      .menu1 {
+         width: 100px !important;
+         height: 100px !important;
+      }
+
+      .menu1 .line {
+         transition: 0.5s;
+         left: 0;
+         top: 0;
+         pointer-events: none;
+         background-color: gray;
+         transform-origin: left 50%;
+      }
+
+      .menu1 .line:nth-child(1) {
+         position: absolute;
+         left: 17px !important;
+         top: 17px !important;
+         width: 67px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(0deg) !important;
+      }
+
+      .menu1 .line:nth-child(2) {
+         position: absolute;
+         left: 83px !important;
+         top: 50px !important;
+         width: 67px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(-180deg) !important;
+      }
+
+      .menu1 .line:nth-child(3) {
+         position: absolute;
+         left: 83px !important;
+         top: 83px !important;
+         width: 67px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(-180deg) !important;
+      }
+
+      .menu1:hover .line:nth-child(1) {
+         position: absolute;
+         left: 50px !important;
+         top: 11px !important;
+         width: 78px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(-270deg) !important;
+      }
+
+      .menu1:hover .line:nth-child(2) {
+         position: absolute;
+         left: 50px !important;
+         top: 83px !important;
+         width: 47px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(-45deg) !important;
+      }
+
+      .menu1:hover .line:nth-child(3) {
+         position: absolute;
+         left: 50px !important;
+         top: 83px !important;
+         width: 47px !important;
+         height: 16px !important;
+         border-radius: 28px !important;
+         transform: translateY(-50%) rotate(-135deg) !important;
+      }
+   </style>
+</head>
+
+<body>
+   <div class='menu1'>
+      <div class='line'></div>
+      <div class='line'></div>
+      <div class='line'></div>
+   </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenuIconCreator</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    
+    <div id='wrap'>
+        <div class='draw origin'>
+            <div id='dots'>
+            </div>
+            <div id='grid'>
+            </div>
+        </div>
+        <div class='draw clone'>
+            <div id='dots'>
+            </div>
+            <div id='grid'>
+            </div>
+        </div>
+        <div class='draw result'>
+            
+        </div>
+        <div id='condition'>
+            <div>thick : <input id='thick' type='range' min='1' max='100' value='20'></div>
+            <div>radius : <input id='radius' type='range' min='0' max='100' value='5'></div>
+            <div>size : <input id='size' type='range' min='20' max='100' value='30'></div>
+            <div>class : <input id='className' type='text' value='menu1' style='width:100px'></div>
+            <button onclick="create()" style='margin-left:140px'>만들기</button>
+        </div>
+        <div class='print'>
+            css
+            <textarea spellcheck="false"></textarea>
+        </div>
+        <div class='print a'>
+            html
+            <textarea spellcheck="false"></textarea>
+        </div>
+    </div>
+    <script src='mic.js'></script>
+</body>
+
+</html>
