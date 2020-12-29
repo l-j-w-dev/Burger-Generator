@@ -225,8 +225,7 @@ function create(size){
     <div class='line'></div>
 </div>
 `
-    document.querySelector('.print textarea').value = str.split(' !important').join('');
-    document.querySelector('.print textarea').value = str.split('.result').join('.'+document.querySelector('#className').value+'');
+    document.querySelector('.print textarea').value = str.split(' !important').join('').split('.result').join('.'+document.querySelector('#className').value+'');
     document.querySelector('.print.a textarea').value = h.split('result').join(document.querySelector('#className').value);
 }
 
