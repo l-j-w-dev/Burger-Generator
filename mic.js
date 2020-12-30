@@ -50,7 +50,7 @@ const createDot = (x, y, x2, y2) => {
     dotwrap.className = 'dotwrap';
 
     const dot1 = document.createElement('div');
-    dot1.className = 'dot';
+    dot1.className = 'dot normal';
     dot1.style.left = x + 'px';
     dot1.style.top = y + 'px';
     dot1.addEventListener('mousedown', e => {
@@ -58,7 +58,7 @@ const createDot = (x, y, x2, y2) => {
     })
 
     const dot2 = document.createElement('div');
-    dot2.className = 'dot';
+    dot2.className = 'dot normal';
     dot2.style.left = x2 + 'px';
     dot2.style.top = y2 + 'px';
     dot2.addEventListener('mousedown', e => {
@@ -114,6 +114,10 @@ window.addEventListener('mousemove', e => {
                 if (target.parentNode.children[1] == target) {
                     target2 = target.parentNode.children[0];
                 }
+                target2.classList.remove('selected')
+                target2.classList.add('normal')
+                target.classList.remove('normal')
+                target.classList.add('selected')
                 const line = target.parentNode.children[2];
                 const rotate = Math.atan2(target2.style.top.split('px')[0] - target.style.top.split('px')[0], target2.style.left.split('px')[0] - target.style.left.split('px')[0]);
                 let deg = rotate * 180 / Math.PI;

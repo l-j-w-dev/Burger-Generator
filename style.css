@@ -50,16 +50,29 @@ html, body{
     height:10px;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 2px solid #80B918;
-    background-color:#EEEF20;
     position: absolute;
     z-index:5;
     transform: translate(calc(-50% - 0.5px), calc(-50% - 0.5px));
+    cursor: pointer;
 }
-.draw #dots .dot:hover{
+
+
+
+.draw #dots .dot.selected{
+    border: 2px solid #F48C06;
+    background-color:#9D0208;
+}
+.draw #dots .dot.selected:hover{
+    border: 2px solid #FAA307;
+    background-color:#D00000;
+}
+.draw #dots .dot.normal{
+    border: 2px solid #80B918;
+    background-color:#EEEF20;
+}
+.draw #dots .dot.normal:hover{
     border: 2px solid #AACC00;
     background-color:#FFFF3F;
-    cursor: pointer;
 }
 
 .draw #grid{
