@@ -249,5 +249,5 @@ window.onload = () => {
     createDot(80, 80, 280, 80);
     createDot(80, 180, 280, 180);
     createDot(80, 280, 280, 280);
-    create();
+    create(30);
 }
