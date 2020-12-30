@@ -33,6 +33,13 @@ html, body{
     left:50%;
     transform:translateX(-50%);
 }
+.draw.result::before{
+    position: absolute;
+    content: '< hover here';
+    color:white;
+    width:200px;
+    left:100%;
+}
 
 .draw .line{
     left:0;
@@ -152,4 +159,9 @@ html, body{
 
 textarea {
     outline: none;
+}
+
+button{
+    background-color:green;
+    color:white;
 }
