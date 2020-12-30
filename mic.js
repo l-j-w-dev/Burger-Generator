@@ -113,6 +113,7 @@ window.addEventListener('mousemove', e => {
                 let target2 = target.parentNode.children[1];
                 if (target.parentNode.children[1] == target) {
                     target2 = target.parentNode.children[0];
+                    
                 }
                 target2.classList.remove('selected')
                 target2.classList.add('normal')
@@ -121,11 +122,16 @@ window.addEventListener('mousemove', e => {
                 const line = target.parentNode.children[2];
                 const rotate = Math.atan2(target2.style.top.split('px')[0] - target.style.top.split('px')[0], target2.style.left.split('px')[0] - target.style.left.split('px')[0]);
                 let deg = rotate * 180 / Math.PI;
-                deg = (deg - 360) % 360;
+                
+                line.style.left = Number(target.style.left.split('px')[0]) + 'px';
+                if(Math.abs(deg) > 90){
+                    line.style.transform = 'translateX(1px) translateY(-50%) rotate(' + deg + 'deg)';
+                    line.style.left = Number(target.style.left.split('px')[0]) + -1 + 'px';
+                }else{
+                    line.style.transform = 'translateY(-50%) rotate(' + deg + 'deg)';
+                }
                 line.style.top = target.style.top.split('px')[0] + 'px';
-                line.style.left = target.style.left.split('px')[0] + 'px';
-                line.style.transform = 'translateY(-50%) rotate(' + deg + 'deg)';
-                line.style.width = calcDist(target.style.left.split('px')[0], target.style.top.split('px')[0], target2.style.left.split('px')[0], target2.style.top.split('px')[0]) + 'px';
+                line.style.width = calcDist(target.style.left.split('px')[0], target.style.top.split('px')[0], target2.style.left.split('px')[0], target2.style.top.split('px')[0]) +'px';
                 break;
             }
         }
@@ -170,10 +176,13 @@ function create(size){
     for(let item of $result.querySelectorAll('.cell')){
         item.remove();
     }
-    
+    let isRight = false;
+    let i = 0;
     for(let item of $result.querySelectorAll('.dot')){
         item.remove();
     }
+    console.log(isRight)
+
     for(let item of $result.querySelectorAll('.line')){
         $result.appendChild(item);
     }
@@ -199,7 +208,7 @@ function create(size){
     position : absolute;
     left : ${(Number(o.left.split('px')[0]) * size/360).toFixed(0)}px !important;
     top : ${(Number(o.top.split('px')[0]) * size/360).toFixed(0)}px !important;
-    width : ${(Number(o.width.split('px')[0]) * size/360).toFixed(0)}px !important;
+    width : ${(Number(o.width.split('px')[0]) * size/360).toFixed(1)}px !important;
     height : ${(Number(o.height.split('px')[0]) * size/360).toFixed(0)}px !important;
     border-radius : ${(Number(o.borderRadius.split('px')[0]) * size/360).toFixed(0)}px !important;
     transform : ${o.transform = o.transform || "\'\'"} !important;
@@ -215,7 +224,7 @@ function create(size){
     position : absolute;
     left : ${(Number(c.left.split('px')[0]) * size/360).toFixed(0)}px !important;
     top : ${(Number(c.top.split('px')[0]) * size/360).toFixed(0)}px !important;
-    width : ${(Number(c.width.split('px')[0]) * size/360).toFixed(0)}px !important;
+    width : ${(Number(c.width.split('px')[0]) * size/360).toFixed(1)}px !important;
     height : ${(Number(c.height.split('px')[0]) * size/360).toFixed(0)}px !important;
     border-radius : ${(Number(c.borderRadius.split('px')[0]) * size/360).toFixed(0)}px !important;
     transform : ${c.transform = c.transform || "\'\'"} !important;

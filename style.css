@@ -25,8 +25,8 @@ html, body{
     position: relative;
 }
 .draw.result{
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
     top:365px;
     padding:0;
     position: absolute;
