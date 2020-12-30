@@ -126,6 +126,7 @@ window.addEventListener('mousemove', e => {
                 line.style.left = target.style.left.split('px')[0] + 'px';
                 line.style.transform = 'translateY(-50%) rotate(' + deg + 'deg)';
                 line.style.width = calcDist(target.style.left.split('px')[0], target.style.top.split('px')[0], target2.style.left.split('px')[0], target2.style.top.split('px')[0]) + 'px';
+                break;
             }
         }
     }
