@@ -50,7 +50,7 @@ const createDot = (x, y, x2, y2) => {
     dotwrap.className = 'dotwrap';
 
     const dot1 = document.createElement('div');
-    dot1.className = 'dot normal';
+    dot1.className = 'dot selected';
     dot1.style.left = x + 'px';
     dot1.style.top = y + 'px';
     dot1.addEventListener('mousedown', e => {
