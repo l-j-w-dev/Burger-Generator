@@ -124,6 +124,7 @@ html, body{
     height:200px;
     bottom:0;
     background-color:gainsboro;
+    font-size:12px;
 }
 #condition > div{
     height:20px;

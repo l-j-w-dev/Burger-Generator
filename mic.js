@@ -15,6 +15,7 @@ const $size = document.querySelector('#size');
 $thick.addEventListener('input', e => {
     const $lines = $draw.querySelectorAll('.line')
     const $linescopy = $copy.querySelectorAll('.line')
+    $thick.parentNode.children[1].innerHTML = $thick.value + 'px';
     for (let i = 0; i < $lines.length; i++) {
         $lines[i].style.height = $thick.value + 'px';
         $linescopy[i].style.height = $thick.value + 'px';
@@ -24,13 +25,14 @@ $thick.addEventListener('input', e => {
 $radius.addEventListener('input', e => {
     const $lines = $draw.querySelectorAll('.line')
     const $linescopy = $copy.querySelectorAll('.line')
-
+    $radius.parentNode.children[1].innerHTML = $radius.value + 'px';
     for (let i = 0; i < $lines.length; i++) {
         $lines[i].style.borderRadius = $radius.value + 'px';
         $linescopy[i].style.borderRadius = $radius.value + 'px';
     }
 })
 $size.addEventListener('input', e => {
+    $size.parentNode.children[1].innerHTML = $size.value + 'px';
     $result.style.width = $size.value + 'px';
     $result.style.height = $size.value + 'px';
 })
